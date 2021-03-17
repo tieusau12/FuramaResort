@@ -1,17 +1,20 @@
 package Controllers;
 
+import Models.ServicesManager;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MainController {
     public static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         displayMainMenu();
 
 
     }
 
-    private static void displayMainMenu() {
+    public static void displayMainMenu() throws IOException {
         System.out.println("     \n" +
                 "        1.  Add New Services\n" +
                 "        2. Show Services\n" +
@@ -24,8 +27,10 @@ public class MainController {
         int choose = Integer.parseInt(sc.nextLine());
         switch (choose) {
             case 1:
+                ServicesManager.addNewService();
                 break;
             case 2:
+                ServicesManager.showService();
                 break;
             case 3:
                 break;

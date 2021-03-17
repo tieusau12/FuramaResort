@@ -2,17 +2,15 @@ package Models;
 
 public class Villa extends Services {
     private String typeOfRoom;
-    private String roomAmenities;
     private double areaOfPool;
     private int floors;
 
     public Villa(String id, String nameServices, double areaServices, double priceServices, int accompanyPeople,
-                 String typeOfRental, String typeOfRoom, int floors, double areaOfPool, String roomAmenities) {
+                 String typeOfRental, String typeOfRoom, int floors, double areaOfPool) {
         super(id, nameServices, areaServices, priceServices, accompanyPeople, typeOfRental);
         this.typeOfRoom = typeOfRoom;
         this.floors = floors;
         this.areaOfPool = areaOfPool;
-        this.roomAmenities = roomAmenities;
     }
 
     public String getTypeOfRoom() {
@@ -39,14 +37,6 @@ public class Villa extends Services {
         this.areaOfPool = areaOfPool;
     }
 
-    public String getRoomAmenities() {
-        return roomAmenities;
-    }
-
-    public void setRoomAmenities(String roomAmenities) {
-        this.roomAmenities = roomAmenities;
-    }
-
     @Override
     public String showInfo() {
         return "ID Villa: " + super.getIdServices() +
@@ -57,8 +47,7 @@ public class Villa extends Services {
                 " , Tiêu chuẩn phòng: " + getTypeOfRoom() +
                 " , Diện tích hồ bơi: " + getAreaOfPool() +
                 " , Kiểu thuê: " + super.getTypeOfRental() +
-                " , Chi phí thuê: " + super.getPriceServices() + "USD"
-                + ", Tiện nghi khác : " + roomAmenities;
+                " , Chi phí thuê: " + super.getPriceServices() + "USD";
     }
 
     @Override
@@ -66,8 +55,7 @@ public class Villa extends Services {
         return super.toString() + "," +
                 typeOfRoom + "," +
                 floors + "," +
-                areaOfPool + "," +
-                roomAmenities;
+                areaOfPool;
     }
 }
 
