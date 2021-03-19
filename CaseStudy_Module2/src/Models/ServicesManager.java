@@ -1,9 +1,9 @@
 package Models;
 
 import Controllers.MainController;
-import commom.CheckClass;
-import commom.FileUtils;
-import commom.ValidateService;
+import Commoms.CheckClass;
+import Commoms.FileUtils;
+import Commoms.ValidateService;
 
 import java.io.IOException;
 import java.util.*;
@@ -40,7 +40,7 @@ public class ServicesManager {
     }
 
     private static void addNewRoom() throws IOException {
-        List<String> checkIDRoom = FileUtils.readFile("E:\\FuramaResort\\CaseStudy_Module2\\src\\Data\\Room.csv");
+        List<String> checkIDRoom = FileUtils.readFile("CaseStudy_Module2/src/Data/Room.csv");
         ValidateService validateServiceRoom = new ValidateService();
         boolean flag;
         String idRoom;
@@ -116,12 +116,12 @@ public class ServicesManager {
         priceRoom = CheckClass.checkPrice();
 
         Room room = new Room(idRoom, nameRoom, areaOfRoom, priceRoom, accompanyPeopleRoom, typeOfRentalRoom, freeService);
-        FileUtils.writeFile("E:\\FuramaResort\\CaseStudy_Module2\\src\\Data\\Room.csv", room);
+        FileUtils.writeFile("CaseStudy_Module2/src/Data/Room.csv", room);
         addNewService();
     }
 
     private static void addNewHouse() throws IOException {
-        List<String> checkIDHouse = FileUtils.readFile("E:\\FuramaResort\\CaseStudy_Module2\\src\\Data\\House.csv");
+        List<String> checkIDHouse = FileUtils.readFile("CaseStudy_Module2/src/Data/House.csv");
         ValidateService validateServiceHouse = new ValidateService();
         boolean flag;
         String idHouse;
@@ -195,13 +195,13 @@ public class ServicesManager {
 
         priceHouse = CheckClass.checkPrice();
         House house = new House(idHouse, nameHouse, areaOfHouse, priceHouse, accompanyPeopleHouse, typeOfRentalHouse, typeOfRoomHouse, floorsOfHouse);
-        FileUtils.writeFile("E:\\FuramaResort\\CaseStudy_Module2\\src\\Data\\House.csv", house);
+        FileUtils.writeFile("CaseStudy_Module2/src/Data/House.csv", house);
         addNewService();
     }
 
     private static void addNewVilla() throws IOException {
         ValidateService validateService = new ValidateService();
-        List<String> checkIDVilla = FileUtils.readFile("E:\\FuramaResort\\CaseStudy_Module2\\src\\Data\\Villa.csv");
+        List<String> checkIDVilla = FileUtils.readFile("CaseStudy_Module2/src/Data/Villa.csv");
         boolean flag;
         String idVilla;
         String nameVilla;
@@ -284,7 +284,7 @@ public class ServicesManager {
 
         priceVilla = CheckClass.checkPrice();
         Villa villa = new Villa(idVilla, nameVilla, areaOfVilla, priceVilla, accompanyPeople, typeOfRental, typeOfRoomVilla, floorsOfVilla, areaPoolVilla);
-        FileUtils.writeFile("E:\\FuramaResort\\CaseStudy_Module2\\src\\Data\\Villa.csv", villa);
+        FileUtils.writeFile("CaseStudy_Module2/src/Data/Villa.csv", villa);
         addNewService();
     }
 
@@ -300,7 +300,7 @@ public class ServicesManager {
         int chooseNumber = CheckClass.checkNumber(8);
         switch (chooseNumber) {
             case 1:
-                List<String> listVilla = FileUtils.readFile("src/data/Villa.csv");
+                List<String> listVilla = FileUtils.readFile("CaseStudy_Module2/src/Data/Villa.csv");
                 if (listVilla.size() > 0) {
                     for (String index : listVilla) {
                         String[] villaArray = index.split(",");
@@ -316,7 +316,7 @@ public class ServicesManager {
                 MainController.displayMainMenu();
                 break;
             case 2:
-                List<String> listHouse = FileUtils.readFile("src/data/House.csv");
+                List<String> listHouse = FileUtils.readFile("CaseStudy_Module2/src/Data/House.csv");
                 if (listHouse.size() > 0) {
                     for (String index : listHouse) {
                         String[] houseArray = index.split(",");
@@ -331,7 +331,7 @@ public class ServicesManager {
                 MainController.displayMainMenu();
                 break;
             case 3:
-                List<String> listRoom = FileUtils.readFile("src/data/Room.csv");
+                List<String> listRoom = FileUtils.readFile("CaseStudy_Module2/src/Data/Room.csv");
                 if (listRoom.size() > 0) {
                     for (String index : listRoom) {
                         String[] roomArray = index.split(",");
@@ -347,7 +347,7 @@ public class ServicesManager {
                 break;
             case 4:
                 Set<String> nameVilla = new TreeSet<>();
-                List<String> listDisplayNameVilla = FileUtils.readFile("src/data/Villa.csv");
+                List<String> listDisplayNameVilla = FileUtils.readFile("CaseStudy_Module2/src/Data/Villa.csv");
                 if (listDisplayNameVilla.size() > 0) {
                     for (String element : listDisplayNameVilla) {
                         String[] array = element.split(",");
@@ -363,7 +363,7 @@ public class ServicesManager {
                 break;
             case 5:
                 Set<String> nameHouse = new TreeSet<>();
-                List<String> listDisplayNameHouse = FileUtils.readFile("src/data/House.csv");
+                List<String> listDisplayNameHouse = FileUtils.readFile("CaseStudy_Module2/src/Data/House.csv");
                 if (listDisplayNameHouse.size() > 0) {
                     for (String element : listDisplayNameHouse) {
                         String[] array = element.split(",");
@@ -379,7 +379,7 @@ public class ServicesManager {
                 break;
             case 6:
                 Set<String> nameRoom = new TreeSet<>();
-                List<String> listDisplayNameRoom = FileUtils.readFile("src/data/Room.csv");
+                List<String> listDisplayNameRoom = FileUtils.readFile("CaseStudy_Module2/src/Data/Room.csv");
                 if (listDisplayNameRoom.size() > 0) {
                     for (String element : listDisplayNameRoom) {
                         String[] array = element.split(",");

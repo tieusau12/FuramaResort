@@ -1,4 +1,4 @@
-package commom;
+package Commoms;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
