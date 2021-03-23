@@ -5,6 +5,7 @@ import Models.customer.Customer;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class FileUtils {
     public static void writeFile(String pathFile, Object line) {
@@ -65,5 +66,16 @@ public class FileUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Stack<String> readFileEmployee() throws IOException {
+        Stack<String> listline = new Stack<>();
+        File file = new File("CaseStudy_Module2/src/Data/Employee.csv");
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        String line;
+        while ((line = bufferedReader.readLine()) != null) {
+            listline.add(line);
+        }
+        return listline;
     }
 }

@@ -2,10 +2,9 @@ package Controllers;
 
 import Commoms.CheckClass;
 import Commoms.FileUtils;
-import Models.House;
-import Models.Room;
-import Models.ServicesManager;
-import Models.Villa;
+import Models.*;
+import Models.Employee.EmployeeManager;
+import Models.Employee.FilingCabinet;
 import Models.customer.CustomerManager;
 
 import java.io.IOException;
@@ -29,7 +28,9 @@ public class MainController {
                 "        4. Show Information of Customer\n" +
                 "        5. Add New Booking\n" +
                 "        6. Show Information of Employee\n" +
-                "        7. Exit");
+                "        7. Booking Cinemas \n" +
+                "        8. Search Information of Employee\n" +
+                "        9. Exit");
         System.out.println("Enter a number :");
         int choose = Integer.parseInt(sc.nextLine());
         switch (choose) {
@@ -50,8 +51,15 @@ public class MainController {
                 addNewBooking();
                 break;
             case 6:
+                EmployeeManager.showEmployer();
                 break;
             case 7:
+                Cinemas.bookingCinemas();
+                break;
+            case 8:
+                FilingCabinet.searchEmployee();
+                break;
+            case 9:
                 System.exit(0);
                 break;
         }
